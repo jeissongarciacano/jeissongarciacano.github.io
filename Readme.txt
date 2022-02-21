@@ -1,3 +1,7 @@
+Esta pagina es mi portafilio en la cual use HTML, CSS, JavaScrpipt, Bootstrap y use el Template MyResume como base para realizar el portafolio
+
+https://jeissongarciacano.github.io/
+
 Thanks for downloading this template!
 
 Template Name: MyResume
