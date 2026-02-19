@@ -27,6 +27,104 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Language Switcher Styles -->
+  <style>
+    #language-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+      background: #0563bb;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    #language-toggle:hover {
+      background: #0678e3;
+      transform: scale(1.1);
+    }
+    @media (max-width: 768px) {
+      #language-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 12px;
+      }
+    }
+
+    /* Documents Section Styles */
+    #documents .icon-box {
+      padding: 30px;
+      transition: all ease-in-out 0.3s;
+      border: 1px solid #e9ecef;
+      border-radius: 10px;
+      height: 100%;
+    }
+    #documents .icon-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
+    }
+    #documents .icon {
+      margin-bottom: 15px;
+      color: inherit;
+    }
+    #documents .iconbox-blue .icon {
+      color: #0563bb;
+    }
+    #documents .iconbox-orange .icon {
+      color: #ffa500;
+    }
+    #documents .btn {
+      padding: 8px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+    #documents .btn-primary {
+      background: #0563bb;
+      border-color: #0563bb;
+      color: #fff;
+    }
+    #documents .btn-primary:hover {
+      background: #0678e3;
+      border-color: #0678e3;
+    }
+    #documents .btn-outline-primary {
+      border-color: #0563bb;
+      color: #0563bb;
+      background: transparent;
+    }
+    #documents .btn-outline-primary:hover {
+      background: #0563bb;
+      color: #fff;
+    }
+    #documents .btn-warning {
+      background: #ffa500;
+      border-color: #ffa500;
+      color: #fff;
+    }
+    #documents .btn-warning:hover {
+      background: #ff8c00;
+      border-color: #ff8c00;
+    }
+    #documents .btn-outline-warning {
+      border-color: #ffa500;
+      color: #ffa500;
+      background: transparent;
+    }
+    #documents .btn-outline-warning:hover {
+      background: #ffa500;
+      color: #fff;
+    }
+  </style>
+
   <!-- =======================================================
   * Template Name: MyResume - v4.7.0
   * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
@@ -37,6 +135,9 @@
 
 <body>
 
+  <!-- ======= Language Toggle Button ======= -->
+  <button id="language-toggle" data-lang="en">EN</button>
+
   <!-- ======= Mobile nav toggle button ======= -->
   <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
@@ -45,11 +146,12 @@
 
     <nav id="navbar" class="navbar nav-menu">
       <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Inicio</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Sobre mi</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resumen</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portafolio</span></a></li>
-        <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Servicio</span></a></li>
+        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span data-i18n="nav.home">Inicio</span></a></li>
+        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span data-i18n="nav.about">Sobre mi</span></a></li>
+        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span data-i18n="nav.resume">Resumen</span></a></li>
+        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span data-i18n="nav.portfolio">Portafolio</span></a></li>
+        <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span data-i18n="nav.services">Servicio</span></a></li>
+        <li><a href="#documents" class="nav-link scrollto"><i class="bx bxs-file-doc"></i> <span data-i18n="nav.documents">Documentos</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
 
@@ -59,13 +161,13 @@
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
       <h1>Jeisson Garcia</h1>
-      <p>Soy <span class="typed" data-typed-items="Ingeniero de sistemas y computacion, Java Backend, DevSecOps"></span></p>
+      <p><span data-i18n="hero.iam">Soy</span> <span class="typed" data-typed-items="Ingeniero de Sistemas y Computación, DevSecOps Engineer, Cloud Architect"></span></p>
       <div class="social-links">
         <a href="https://twitter.com/Jei1999" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="https://www.facebook.com/jeisson.garcia40" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/jeissongarcia1/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.instagram.com/jeissongvrtx/" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="https://github.com/jeissongarciacano" class="github"><i class="bx bxl-github"></i></a>
-        <a href="http://www.linkedin.com/in/jeisson-cano-0949771a5" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/jeissonestebangarciacano/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -77,12 +179,9 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Sobre mi</h2>
-          <p>
-            Soy un Ingeniero de Sistemas y Computación apasionado por afrontar desafíos, aprendizaje constante y trabajo colaborativo. Mi personalidad perseverante me impulsa a abordar cualquier obstáculo con determinación, siempre buscando soluciones efectivas.
-            Con una dedicación disciplinada, disfruto del aprendizaje continuo y tengo una habilidad natural para comunicarme de manera efectiva. Mi experiencia incluye roles en los cuales he demostrado mis habilidades técnicas, como la programación en C# con Unity y el manejo de tecnologías Java con SpringBoot.
-            Actualmente, me desempeño como DevSecOps, donde gestiono una variedad de tecnologías, incluyendo AWS, Terraform, EC2, ECS, EKS, ECR, VPC y servicios de seguridad como AWS WAF. Mi enfoque está en la mejora continua, colaborando estrechamente con el equipo y contribuyendo al crecimiento de la empresa.
-            Me caracterizo por mi capacidad para abordar cualquier situación que no funcione, mi habilidad para trabajar en equipo y mi compromiso con la excelencia en cada tarea que emprendo. Soy una persona proactiva, siempre buscando la innovación y dispuesto a enfrentar nuevos desafíos con confianza y versatilidad.
+          <h2 data-i18n="about.title">Sobre mi</h2>
+          <p data-i18n="about.description">
+            Ingeniero en Sistemas y Computación con experiencia sólida en backend, DevSecOps y entornos cloud. Especialista en AWS, Azure, Docker, Terraform y automatización con Bash y Git. En Sofka diseño arquitecturas en Azure para Sura con foco en seguridad y monitoreo mediante Sentinel, gestionando automatización e infraestructura como código. He trabajado en gestión de accesos (IAM) y en CI/CD con GitLab y Azure DevOps, integrando SIEM/SOAR como Sentinel y Splunk. En Ditech lideré migraciones y estrategias de seguridad en AWS para Inmotion, HDI y Liberty Mutual, y en Avenfor promoví la cultura DevOps con enfoque en calidad y eficiencia. Me caracterizo por la disciplina, adaptabilidad y capacidad de colaboración efectiva.
           </p>
         </div>
 
@@ -91,43 +190,43 @@
             <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>Ingeniero de sistemas y computacion | Desarrollador Java Backend | DevSecOps.</h3>
+            <h3 data-i18n="about.subtitle">Ingeniero de Sistemas y Computación | DevSecOps Engineer | Cloud Architect</h3>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Fecha de nacimiento:</strong> <span>19 Dec 1999</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Celular:</strong> <span>+57 3014800300</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Ciudad:</strong> <span>Medellin, CO</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.birthdate">Fecha de nacimiento:</strong> <span>19 Dec 1999</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.phone">Celular:</strong> <span>+57 3014800300</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.city">Ciudad:</strong> <span>Medellin, CO</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Edad:</strong> <span>24</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Titulo:</strong> <span>Ingeniero de sistemas y computación</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>jei.isson.1999@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.age">Edad:</strong> <span>26</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.degree">Titulo:</strong> <span data-i18n="about.degree.value">Ingeniero de sistemas y computación</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.email">Email:</strong> <span>jei.isson.1999@gmail.com</span></li>
                 </ul>
               </div>
             </div>
-            <h3>Caracteristicas &amp; Hobbies .</h3>
+            <h3 data-i18n="about.characteristics">Caracteristicas &amp; Hobbies .</h3>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Amigable</strong></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Adaptable</strong></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Diciplinado</strong></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Honesto</strong></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Leal</strong></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Puntual</strong></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Responsable</strong></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.char1">Amigable</strong></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.char2">Adaptable</strong></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.char3">Diciplinado</strong></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.char4">Honesto</strong></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.char5">Leal</strong></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.char6">Puntual</strong></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.char7">Responsable</strong></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Hacer ejercicio</strong></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Leer</strong> </li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Jugar videojuegos</strong></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Montar bicicleta</strong></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Aprender</strong></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.hobby1">Hacer ejercicio</strong></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.hobby2">Leer</strong> </li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.hobby3">Jugar videojuegos</strong></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.hobby4">Montar bicicleta</strong></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="about.hobby5">Aprender</strong></li>
                 </ul>
               </div>
             </div>
@@ -142,9 +241,9 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Logros</h2>
-          <p>
-            Obtenidos actualmente
+          <h2 data-i18n="facts.title">Logros</h2>
+          <p data-i18n="facts.description">
+            Métricas profesionales actuales
           </p>
         </div>
 
@@ -152,33 +251,33 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="20000" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Horas de programacion aprox.</p>
+              <i class="bi bi-briefcase"></i>
+              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+              <p data-i18n="facts.experience">Años de experiencia profesional</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Proyectos</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Idiomas</p>
+              <i class="bi bi-building"></i>
+              <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+              <p data-i18n="facts.clients">Clientes/Proyectos Grandes</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Premios</p>
+              <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
+              <p data-i18n="facts.certifications">Certificaciones AWS</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi-cloud-arrow-up"></i>
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+              <p data-i18n="facts.migrations">Infraestructuras Cloud</p>
             </div>
           </div>
 
@@ -192,7 +291,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Habilidades</h2>
+          <h2 data-i18n="skills.title">Habilidades</h2>
         </div>
 
         <div class="row skills-content">
@@ -200,106 +299,93 @@
           <div class="col-lg-6">
 
             <div class="progress">
-              <span class="skill">Español <i class="val">Nativo</i></span>
+              <span class="skill"><span data-i18n="skills.spanish">Español</span> <i class="val"><span data-i18n="skills.spanish.level">Nativo</span></i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <div class="progress">
-              <span class="skill">Ingles <i class="val">C1</i></span>
+              <span class="skill"><span data-i18n="skills.english">Ingles</span> <i class="val">C1</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <div class="progress">
-              <span class="skill">Java <i class="val">100%</i></span>
+              <span class="skill">AWS <i class="val">95%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <div class="progress">
-              <span class="skill">Terraform <i class="val">100%</i></span>
+              <span class="skill">Azure <i class="val">95%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <div class="progress">
-              <span class="skill">Springboot <i class="val">100%</i></span>
+              <span class="skill">Terraform <i class="val">95%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <div class="progress">
-              <span class="skill">AWS <i class="val">90%</i></span>
+              <span class="skill">Docker <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
+
             <div class="progress">
-              <span class="skill">Azure devops <i class="val">80%</i></span>
+              <span class="skill">Kubernetes (EKS/ECS) <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <div class="progress">
-              <span class="skill">SQL <i class="val">80%</i></span>
+              <span class="skill">Bash Scripting <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <div class="progress">
-              <span class="skill">Git <i class="val">80%</i></span>
+              <span class="skill">Git <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <div class="progress">
-              <span class="skill">Arquitectura hexagonal <i class="val">80%</i></span>
+              <span class="skill">Azure Sentinel (SIEM/SOAR) <i class="val">85%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <div class="progress">
-              <span class="skill">Arquitectura limpia <i class="val">80%</i></span>
+              <span class="skill">Splunk <i class="val">85%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <div class="progress">
-              <span class="skill">Sonarqube <i class="val">80%</i></span>
+              <span class="skill">IAM (Identity & Access Management) <i class="val">85%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <div class="progress">
-              <span class="skill">Arqtifactory <i class="val">80%</i></span>
+              <span class="skill">AWS WAF <i class="val">85%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Spring security <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Spring JPA <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
@@ -308,99 +394,93 @@
           <div class="col-lg-6">
 
             <div class="progress">
+              <span class="skill">Jenkins <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">GitLab CI/CD <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Azure DevOps <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Python <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Java <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            
+            <div class="progress">
+              <span class="skill">SpringBoot <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Linux <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">SonarQube <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">JFrog Artifactory <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
               <span class="skill">Microservicios <i class="val">80%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-            
+
             <div class="progress">
-              <span class="skill">Junit <i class="val">75%</i></span>
+              <span class="skill">HELM <i class="val">75%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <div class="progress">
-              <span class="skill">Mockito <i class="val">75%</i></span>
+              <span class="skill">TypeScript <i class="val">75%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-            <div class="progress">
-              <span class="skill">NoSQL <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
 
             <div class="progress">
-              <span class="skill">Docker <i class="val">70%</i></span>
+              <span class="skill">C# / Unity <i class="val">70%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Python <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Ansible <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">HELM <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            
-            <div class="progress">
-              <span class="skill">TypeScript <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Bash <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Linux <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">C/C++ <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">C# <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
@@ -416,21 +496,18 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Resumen</h2>
-          <p>
-            Soy un Ingeniero de Sistemas y Computación apasionado por afrontar desafíos, aprendizaje constante y trabajo colaborativo. Mi personalidad perseverante me impulsa a abordar cualquier obstáculo con determinación, siempre buscando soluciones efectivas.
-            Con una dedicación disciplinada, disfruto del aprendizaje continuo y tengo una habilidad natural para comunicarme de manera efectiva. Mi experiencia incluye roles en los cuales he demostrado mis habilidades técnicas, como la programación en C# con Unity y el manejo de tecnologías Java con SpringBoot.
-            Actualmente, me desempeño como DevSecOps, donde gestiono una variedad de tecnologías, incluyendo AWS, Terraform, EC2, ECS, EKS, ECR, VPC y servicios de seguridad como AWS WAF. Mi enfoque está en la mejora continua, colaborando estrechamente con el equipo y contribuyendo al crecimiento de la empresa.
-            Me caracterizo por mi capacidad para abordar cualquier situación que no funcione, mi habilidad para trabajar en equipo y mi compromiso con la excelencia en cada tarea que emprendo. Soy una persona proactiva, siempre buscando la innovación y dispuesto a enfrentar nuevos desafíos con confianza y versatilidad.
+          <h2 data-i18n="resume.title">Resumen</h2>
+          <p data-i18n="resume.description">
+            Ingeniero en Sistemas y Computación con experiencia sólida en backend, DevSecOps y entornos cloud. Especialista en AWS, Azure, Docker, Terraform y automatización con Bash y Git. En Sofka diseño arquitecturas en Azure para Sura con foco en seguridad y monitoreo mediante Sentinel, gestionando automatización e infraestructura como código. He trabajado en gestión de accesos (IAM) y en CI/CD con GitLab y Azure DevOps, integrando SIEM/SOAR como Sentinel y Splunk. En Ditech lideré migraciones y estrategias de seguridad en AWS para Inmotion, HDI y Liberty Mutual, y en Avenfor promoví la cultura DevOps con enfoque en calidad y eficiencia. Me caracterizo por la disciplina, adaptabilidad y capacidad de colaboración efectiva.
           </p>
         </div>
 
         <div class="row">
           <div class="col-lg-6">
-            <h3 class="resume-title">Resumen</h3>
+            <h3 class="resume-title" data-i18n="resume.summary">Resumen</h3>
             <div class="resume-item pb-0">
               <h4>Jeisson Garcia</h4>
-              <p><em>Desarrollador backend y DevSecOps</em></p>
+              <p><em data-i18n="resume.developer">DevSecOps Engineer & Cloud Architect</em></p>
               <ul>
                 <li>Medellin, CO</li>
                 <li>+57 3014800300</li>
@@ -438,65 +515,57 @@
               </ul>
             </div>
 
-            <h3 class="resume-title">Educacion</h3>
+            <h3 class="resume-title" data-i18n="resume.education">Educacion</h3>
             <div class="resume-item">
-              <h4>Bachiller academico </h4>
+              <h4 data-i18n="resume.edu1.title">Bachiller academico </h4>
               <h5>2006 - 2017</h5>
               <p><em>Instituto San Carlos de Lasalle, Medellin, Antioquia</em></p>
-              <p>Estudios basicos secundaria que certifica como bachiller academico y con educacion basica</p>
+              <p data-i18n="resume.edu1.description">Estudios basicos secundaria que certifica como bachiller academico y con educacion basica</p>
             </div>
             <div class="resume-item">
-              <h4>Ingles &amp; C1</h4>
+              <h4 data-i18n="resume.edu2.title">Ingles &amp; C1</h4>
               <h5>2018 - 2021</h5>
               <p><em>Colombo Americano, Medellin, Antioquia</em></p>
-              <p>Certificacion nivel C1 en ingles en totalidad 24 cursos</p>
+              <p data-i18n="resume.edu2.description">Certificacion nivel C1 en ingles en totalidad 24 cursos</p>
             </div>
             <div class="resume-item">
-              <h4>Ingeniero de sistemas &amp; computación</h4>
+              <h4 data-i18n="resume.edu3.title">Ingeniero de sistemas &amp; computación</h4>
               <h5>2018 - 2023</h5>
               <p><em>Universidad EIA, Envigado, Antioquia</em></p>
-              <p>Titulo universitario que certifica ser ingeniero de sistemas y computacion, con preparacion en ciencias de la computacion</p>
+              <p data-i18n="resume.edu3.description">Titulo universitario que certifica ser ingeniero de sistemas y computacion, con preparacion en ciencias de la computacion</p>
             </div>
           </div>
           <div class="col-lg-6">
-            <h3 class="resume-title">Experiencia Profesional</h3>
+            <h3 class="resume-title" data-i18n="resume.experience">Experiencia Profesional</h3>
             <div class="resume-item">
-              <h4>Freelance: Calculadora de procesos</h4>
-              <h5>Jun 2022 - Nov 2022</h5>
-              <p><em>Líder técnico<p><em>
-              <p>Se desarrollo una calculadora de procesos con la herramienta de Unity usando el lenguaje de programación C# y 
-                bajo el rol de líder de equipo con responsabilidad de los requisitos y repositorios.</p>
+              <h4 data-i18n="resume.exp1.title">Sofka Technologies</h4>
+              <h5>Ago 2025 - Actualidad</h5>
+              <p><em data-i18n="resume.exp1.role">Ingeniero DevSecOps</em></p>
+              <p data-i18n="resume.exp1.description">Diseño arquitectura en Azure para el cliente Sura, con enfoque en seguridad y monitoreo mediante Azure Sentinel. Implemento automatización de infraestructura y controles de seguridad con Terraform, gestionando IAM, políticas de acceso y compliance. Integración de SIEM/SOAR para detección y respuesta automatizada de amenazas.</p>
             </div>
             <div class="resume-item">
-              <h4>Pragma</h4>
-              <h5>Feb 2023 - Ago 2023</h5>
-              <p><em>Practicante de desarrollo<p><em>
-              <p>Prácticas empresariales como desarrollador Java Backend, usando Springboot, Junit, AWS, Azure, Mockito, JWT y SQL, 
-                demostrando trabajo en equipo y siendo proactivo dentro de los equipos de trabajo.</p>
+              <h4 data-i18n="resume.exp2.title">Ditech Group</h4>
+              <h5>Abr 2024 - Ago 2025</h5>
+              <p><em data-i18n="resume.exp2.role">Ingeniero DevSecOps</em></p>
+              <p data-i18n="resume.exp2.description">Lideré proyectos de migración y estrategias de seguridad en AWS para clientes como Inmotion Group, HDI y Liberty Mutual. Implementé automatización de procesos con Terraform y Bash, integré herramientas SIEM y SOAR como Azure Sentinel y Splunk, y gestioné infraestructura con EKS, ECS, Docker y Jenkins para CI/CD robusto.</p>
             </div>
             <div class="resume-item">
-              <h4>Pragma</h4>
-              <h5>Ago 2023 - Ago 2023</h5>
-              <p><em>Auxiliar de desarrollo<p><em>
-              <p>Habilitación ruta DevSecOps enfocada en el manejo de Azure devops, implementación de herramientas que promueven el CI/CD como Jmeter, 
-                Dynatrace, sonarqube y Jfrog artifactory, y el manejo de TypeScript, Python y bash script.</p>
-            </div>
-             <div class="resume-item">
-              <h4>Avenfor</h4>
+              <h4 data-i18n="resume.exp3.title">Avenfor</h4>
               <h5>Sep 2023 - Abr 2024</h5>
-              <p><em>Junior Adv DevSecOps & CTO<p><em>
-              <p>Como profesional de DevSecOps, mi rol principal implica la gestión de la arquitectura en la nube de AWS y la implementación de prácticas de CI/CD utilizando GitLab CI. 
-                Además, mi trabajo incluye un enfoque proactivo en la promoción e implementación de una cultura DevOps sólida. Un aspecto fundamental de mi labor es el contacto directo con los clientes,
-                lo que me permite comprender sus necesidades y garantizar la seguridad y eficiencia de nuestras soluciones en la nube.</p>
+              <p><em data-i18n="resume.exp3.role">DevSecOps Developer</em></p>
+              <p data-i18n="resume.exp3.description">Diseñé arquitectura cloud en AWS y pipelines CI/CD con GitLab para clientes como EPM. Implementé prácticas de seguridad en la nube, gestión de IAM, AWS WAF y monitoreo continuo. Promoví la cultura DevOps enfocada en calidad, automatización y eficiencia operacional.</p>
             </div>
             <div class="resume-item">
-              <h4>Ditech</h4>
-              <h5>Abr 2024 - Actualidad</h5>
-              <p><em>Ingeniero DevSecOps<p><em>
-              <p>Como Ingeniero DevSecOps trabajando en un proyecto de migración clave en Inmotion Group, he estado involucrado en la migración de varias aplicaciones de Liberty Mutual a HDI. Mi rol ha sido integral, 
-                abarcando la regularización y análisis de la infraestructura existente, la identificación de problemas potenciales y la garantía de seguridad a lo largo del proceso.
-                He apoyado tanto la estrategia general de migración como la implementación de prácticas de CI/CD (Integración Continua y Despliegue Continuo). Mi trabajo se ha realizado en AWS, 
-                donde he colaborado estrechamente con otros equipos para asegurar una migración fluida y segura, desde la base hasta los despliegues automatizados.</p>
+              <h4 data-i18n="resume.exp4.title">Pragma</h4>
+              <h5>Feb 2023 - Ago 2023</h5>
+              <p><em data-i18n="resume.exp4.role">Practicante & Auxiliar de Desarrollo</em></p>
+              <p data-i18n="resume.exp4.description">Prácticas empresariales como desarrollador Java Backend usando SpringBoot, JUnit, AWS, Azure, Mockito y JWT. Habilitación en ruta DevSecOps con Azure DevOps, implementación de herramientas CI/CD como JMeter, Dynatrace, SonarQube y JFrog Artifactory, y scripting con TypeScript, Python y Bash.</p>
+            </div>
+            <div class="resume-item">
+              <h4 data-i18n="resume.exp5.title">Freelance</h4>
+              <h5>Jun 2022 - Nov 2022</h5>
+              <p><em data-i18n="resume.exp5.role">Líder Técnico</em></p>
+              <p data-i18n="resume.exp5.description">Desarrollé una calculadora de procesos con Unity usando C# bajo el rol de líder de equipo, gestionando requisitos, arquitectura del proyecto y repositorios con Git.</p>
             </div>
           </div>
         </div>
@@ -509,28 +578,28 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Portafolio</h2>
-          <p>Aqui se encuentra por linea temporal cada proyecto que he elaborado</p>
+          <h2 data-i18n="portfolio.title">Portafolio</h2>
+          <p data-i18n="portfolio.description">Aqui se encuentra por linea temporal cada proyecto que he elaborado</p>
         </div>
         <div class="row">
           <div class="col-lg-6">
 
             <div class="resume-item">
-              <h4>Desarrollo videojuego serpiente en lenguaje C</h4>
+              <h4 data-i18n="portfolio.proj1.title">Desarrollo videojuego serpiente en lenguaje C</h4>
               <h5>2016 - 2016</h5>
-              <p>Juego de serpiente basado en C, donde se obtenia el juego de la serpiente</p>
+              <p data-i18n="portfolio.proj1.description">Juego de serpiente basado en C, donde se obtenia el juego de la serpiente</p>
             </div>
 
             <div class="resume-item">
-              <h4>Desarrollo mano robotica basada en lenguaje C</h4>
+              <h4 data-i18n="portfolio.proj2.title">Desarrollo mano robotica basada en lenguaje C</h4>
               <h5>Sept 2017 - Nov 2017</h5>
-              <p>Mano robotica capaz de agarrar objetos no pesados, hecha a base de mangueras de plastico, servomotores y una placa Arduino para fin academico</p>
+              <p data-i18n="portfolio.proj2.description">Mano robotica capaz de agarrar objetos no pesados, hecha a base de mangueras de plastico, servomotores y una placa Arduino para fin academico</p>
             </div>
 
             <div class="resume-item">
-              <h4>Desarrollo videojuego en Java </h4>
+              <h4 data-i18n="portfolio.proj3.title">Desarrollo videojuego en Java </h4>
               <h5>jul 2018 - Nov 2018</h5>
-              <p>
+              <p data-i18n="portfolio.proj3.description">
                 Se uso la Plataforma Greenfoot, el juego consistía en una 
                 hoja de papel como mundo infinito y evitar obstáculos, 
                 además que buscaba desarrollar habilidades motoras con 
@@ -539,26 +608,26 @@
             </div>
 
             <div class="resume-item">
-              <h4>Desarrollo videojuego triki en java</h4>
+              <h4 data-i18n="portfolio.proj4.title">Desarrollo videojuego triki en java</h4>
               <h5>May 2019 - May 2019</h5>
-              <p>
+              <p data-i18n="portfolio.proj4.description">
                 Desarrollo de videojuego de triki con implementacion de algoritmo que predice posible nodo y uso de estrutura de datos
               </p>
             </div>
 
             <div class="resume-item">
-              <h4>Puerta inteligente basada en C y Python</h4>
+              <h4 data-i18n="portfolio.proj5.title">Puerta inteligente basada en C y Python</h4>
               <h5>Jul 2019 - Nov 2019</h5>
-              <p>
+              <p data-i18n="portfolio.proj5.description">
                 Domótica aplicada en una Puerta que al detectar los datos 
                 biométricos ingresados permitía o no el acceso.
               </p>
             </div>
 
             <div class="resume-item">
-              <h4>Compliador de lenguaje en JavaScript</h4>
+              <h4 data-i18n="portfolio.proj6.title">Compliador de lenguaje en JavaScript</h4>
               <h5>Jul 2019 - Nov 2019</h5>
-              <p>
+              <p data-i18n="portfolio.proj6.description">
                 Desarrollo de analizador lexico y compilador de lenguaje de programacion que permitia analizar un codigo entrado por un cuadro de texto, retornaba la tabla y detectaba
                 posibles errores en la estructura del mismo, indicando donde se encontraba este error, todo basado en lenguaje JavaScript
               </p>
@@ -569,9 +638,9 @@
           <div class="col-lg-6">
             
             <div class="resume-item">
-              <h4>Desarrollo videojuego Java y MySQL </h4>
+              <h4 data-i18n="portfolio.proj7.title">Desarrollo videojuego Java y MySQL </h4>
               <h5>Feb 2020 - May 2020</h5>
-              <p>
+              <p data-i18n="portfolio.proj7.description">
                 Se uso la Plataforma Android studio se desarrolló un 
                 aplicativo móvil que enseñara diversos temas mientras se 
                 jugaba.
@@ -579,18 +648,18 @@
             </div>
 
             <div class="resume-item">
-              <h4>Desarrollo videojuego 3D C# </h4>
+              <h4 data-i18n="portfolio.proj8.title">Desarrollo videojuego 3D C# </h4>
               <h5>Sept 2020 - May 2021</h5>
-              <p>
+              <p data-i18n="portfolio.proj8.description">
                 Usando el motor de fisicas unity, se desarrollo un videojuego de evitar obstaculos e ir acumulando puntos mientras la velocidad y la cantidad
                 de obstaculos aumentan, llevando asi un conteo de puntos.
               </p>
             </div>
 
             <div class="resume-item">
-              <h4>Desarrollo aplicativo web Django y React </h4>
+              <h4 data-i18n="portfolio.proj9.title">Desarrollo aplicativo web Django y React </h4>
               <h5>Jul 2021 - Nov 2021</h5>
-              <p>
+              <p data-i18n="portfolio.proj9.description">
                 Aplicativo web que buscaba brindar ayuda psicológica a los 
                 usuarios y mediante al uso de una inteligencia artificial 
                 detectar y predecir depresión, ansiedad o bipolaridad.
@@ -598,9 +667,9 @@
             </div>
 
             <div class="resume-item">
-              <h4>Desarrollo aplicativo web con Flask </h4>
+              <h4 data-i18n="portfolio.proj10.title">Desarrollo aplicativo web con Flask </h4>
               <h5>Nov 2021 - Nov 2021</h5>
-              <p>
+              <p data-i18n="portfolio.proj10.description">
                 Aplicativo web que le permitía al usuario acceder a la 
                 operación matemática a solucionar y retomando la 
                 respuesta de manera eficiente, además de aplicar pruebas 
@@ -609,9 +678,9 @@
             </div>
 
             <div class="resume-item">
-              <h4>Desarrollo portafolio web HTML/CSS y JS </h4>
+              <h4 data-i18n="portfolio.proj11.title">Desarrollo portafolio web HTML/CSS y JS </h4>
               <h5>Ene 2022 - Feb 2022</h5>
-              <p>
+              <p data-i18n="portfolio.proj11.description">
                 Pagina web que inluye informacion personal dirigiada a un desarrollo aplicando conocimientos adquiridos en ingenieria web
               </p>
             </div>
@@ -627,7 +696,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Servicios</h2>
+          <h2 data-i18n="services.title">Servicios</h2>
         </div>
 
         <div class="row">
@@ -640,8 +709,8 @@
                 </svg>
                 <i class="bx bxl-dribbble"></i>
               </div>
-              <h4><a>Desarrollador Backend</a></h4>
-              <p>Desarrollo web usando el framework Springboot</p>
+              <h4><a data-i18n="services.service1.title">Desarrollador Backend</a></h4>
+              <p data-i18n="services.service1.description">Desarrollo web usando el framework Springboot</p>
             </div>
           </div>
 
@@ -653,8 +722,8 @@
                 </svg>
                 <i class="bx bx-file"></i>
               </div>
-              <h4><a>Desarrollo de aplicaciones</a></h4>
-              <p>Desarrollo para aplicaciones de escritorios y diversos lenguajes</p>
+              <h4><a data-i18n="services.service2.title">Desarrollo de aplicaciones</a></h4>
+              <p data-i18n="services.service2.description">Desarrollo para aplicaciones de escritorios y diversos lenguajes</p>
             </div>
           </div>
 
@@ -666,8 +735,8 @@
                 </svg>
                 <i class="bx bx-tachometer"></i>
               </div>
-              <h4><a>DevSecOps</a></h4>
-              <p>DImplementacion de la cultura Devops para brindar buenas practicas y un CI/CD</p>
+              <h4><a data-i18n="services.service3.title">DevSecOps</a></h4>
+              <p data-i18n="services.service3.description">DImplementacion de la cultura Devops para brindar buenas practicas y un CI/CD</p>
             </div>
           </div>
 
@@ -679,8 +748,8 @@
                 </svg>
                 <i class="bx bx-layer"></i>
               </div>
-              <h4><a>Desarrollo de videojuegos</a></h4>
-              <p>Usando motores graficos se desarrolla videojuegos en diferentes lenguajes</p>
+              <h4><a data-i18n="services.service4.title">Desarrollo de videojuegos</a></h4>
+              <p data-i18n="services.service4.description">Usando motores graficos se desarrolla videojuegos en diferentes lenguajes</p>
             </div>
           </div>
 
@@ -689,19 +758,71 @@
       </div>
     </section><!-- End Services Section -->
 
+    <!-- ======= Documents Section ======= -->
+    <section id="documents" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2 data-i18n="documents.title">Documentos Profesionales</h2>
+          <p data-i18n="documents.description">Descarga mis certificaciones y documentos profesionales</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box iconbox-blue w-100">
+              <div class="icon">
+                <i class="bx bxs-file-pdf" style="font-size: 48px;"></i>
+              </div>
+              <h4><a data-i18n="documents.cv.title">Curriculum Vitae</a></h4>
+              <p data-i18n="documents.cv.description">Descarga mi hoja de vida actualizada en español o inglés</p>
+              <div class="mt-3">
+                <a href="assets/pdf/CVEspañolJeissonGarcia.pdf" class="btn btn-primary btn-sm me-2" target="_blank" download>
+                  <i class="bx bx-download"></i> <span data-i18n="documents.cv.spanish">Español</span>
+                </a>
+                <a href="assets/pdf/CVEnglishJeissonGarcia.pdf" class="btn btn-outline-primary btn-sm" target="_blank" download>
+                  <i class="bx bx-download"></i> <span data-i18n="documents.cv.english">Inglés</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box iconbox-orange w-100">
+              <div class="icon">
+                <i class="bx bxs-award" style="font-size: 48px;"></i>
+              </div>
+              <h4><a data-i18n="documents.cert.title">Certificaciones</a></h4>
+              <p data-i18n="documents.cert.description">Certificados de inglés C1 y otras certificaciones profesionales</p>
+              <div class="mt-3">
+                <a href="assets/pdf/JeissonGarciaC1.pdf" class="btn btn-warning btn-sm me-2 mb-2" target="_blank" download>
+                  <i class="bx bx-download"></i> <span data-i18n="documents.cert.diploma">Diploma C1</span>
+                </a>
+                <a href="assets/pdf/JeissonEstebanGarcíaCano.pdf" class="btn btn-outline-warning btn-sm mb-2" target="_blank" download>
+                  <i class="bx bx-download"></i> <span data-i18n="documents.cert.certificate">Certificado</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Documents Section -->
+
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
       <h3>Jeisson Garcia</h3>
-      <p>Ingeniero de sistemas y computacion en formacion</p>
+      <p data-i18n="footer.description">Ingeniero de Sistemas y Computación | DevSecOps Engineer</p>
       <div class="social-links">
         <a href="https://twitter.com/Jei1999" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="https://www.facebook.com/jeisson.garcia40" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/jeissongarcia1/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.instagram.com/jeissongvrtx/" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="https://github.com/jeissongarciacano" class="github"><i class="bx bxl-github"></i></a>
-        <a href="http://www.linkedin.com/in/jeisson-cano-0949771a5" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/jeissonestebangarciacano/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
 
       <div class="copyright">
@@ -732,6 +853,9 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- i18n Translation File -->
+  <script src="assets/js/i18n.js"></script>
 
 </body>
 
